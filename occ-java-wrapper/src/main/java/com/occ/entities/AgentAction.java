@@ -1,5 +1,5 @@
 package com.occ.entities;
 
-public class Event {
+public class AgentAction {
 
 }

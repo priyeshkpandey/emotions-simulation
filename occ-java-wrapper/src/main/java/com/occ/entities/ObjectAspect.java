@@ -1,5 +1,5 @@
 package com.occ.entities;
 
-public class Agent {
+public class ObjectAspect {
 
 }
