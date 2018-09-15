@@ -1,5 +1,8 @@
 package com.occ.meta;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum VariableType {
 	
 	UNEXPECTEDNESS("Unexpectedness", "global"),
@@ -38,6 +41,16 @@ public enum VariableType {
 	
 	public String getVarType() {
 		return this.type;
+	}
+	
+	public List<VariableType> getVarTypesOfType(String type) {
+		List<VariableType> varTypes = new ArrayList<VariableType>();
+		for (VariableType varType : values()) {
+			if (varType.getVarType().equalsIgnoreCase(type)) {
+				varTypes.add(varType);
+			}
+		}
+		return varTypes;
 	}
 
 }
