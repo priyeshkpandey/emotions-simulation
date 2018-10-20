@@ -21,6 +21,7 @@ public enum VariableType {
 	
 	// OBJECT
 	APPEALINGNESS("Appealingness", "object"),
+	FAMILIARITY("Familiarity", "object"),
 	
 	// AGENT ACTION
 	PRAISEWORTHINESS("Praiseworthiness", "agent"),
@@ -43,7 +44,7 @@ public enum VariableType {
 		return this.type;
 	}
 	
-	public List<VariableType> getVarTypesOfType(String type) {
+	public static List<VariableType> getVarTypesOfType(String type) {
 		List<VariableType> varTypes = new ArrayList<VariableType>();
 		for (VariableType varType : values()) {
 			if (varType.getVarType().equalsIgnoreCase(type)) {
