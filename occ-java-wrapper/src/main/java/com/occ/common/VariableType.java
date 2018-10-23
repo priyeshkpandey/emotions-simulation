@@ -1,4 +1,4 @@
-package com.occ.meta;
+package com.occ.common;
 
 import java.util.ArrayList;
 import java.util.List;

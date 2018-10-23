@@ -1,6 +1,5 @@
 package com.occ.entities;
 
-import com.occ.models.infra.Model;
 import com.occ.rules.infra.Rule;
 
 public class Emotion {
@@ -37,8 +36,12 @@ public class Emotion {
 		return threshold;
 	}
 
-	public void evaluate(Model model) {
-		
+	public void setPotential(Integer potential) {
+		this.potential = potential;
+	}
+
+	public void setIntensity(Integer intensity) {
+		this.intensity = intensity;
 	}
 
 }

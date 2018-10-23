@@ -3,7 +3,7 @@ package com.occ.rules.infra;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.occ.meta.VariableType;
+import com.occ.common.VariableType;
 
 public class Rule {
 	

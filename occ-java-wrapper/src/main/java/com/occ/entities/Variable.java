@@ -1,6 +1,6 @@
 package com.occ.entities;
 
-import com.occ.meta.VariableType;
+import com.occ.common.VariableType;
 
 public class Variable {
 	
