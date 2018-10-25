@@ -1,1 +1,1 @@
-# emotions-simulation
+A simulation framework for Emotions based on OCC model (Ortony, A., Clore, G., & Collins, A. (1988). The Cognitive Structure of Emotions. Cambridge: Cambridge University Press. doi:10.1017/CBO9780511571299)
