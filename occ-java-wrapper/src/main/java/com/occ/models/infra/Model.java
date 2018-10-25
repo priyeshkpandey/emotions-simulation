@@ -27,5 +27,10 @@ public class Model {
 		}
 		return null;
 	}
+	
+	public Model remove(Variable variable) {
+		variables.remove(variable);
+		return this;
+	}
 
 }

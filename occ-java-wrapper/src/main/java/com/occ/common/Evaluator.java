@@ -61,7 +61,7 @@ public class Evaluator {
 		NumberFormat numberFormat = NumberFormat.getInstance();
 		for (VariableType ruleVariableType : rule.getAtomicRules().keySet()) {
 			Variable variable = model.getVariableOfType(ruleVariableType); 
-			potential += numberFormat.parse(variable.getValue()).doubleValue();
+			potential += Math.abs(numberFormat.parse(variable.getValue()).doubleValue());
 		}
 		potential = potential/numOfVariables;
 		emo.setPotential(potential);
