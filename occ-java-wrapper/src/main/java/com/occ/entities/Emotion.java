@@ -6,11 +6,11 @@ public class Emotion {
 	
 	private String name;
 	private Rule rule;
-	private Integer potential;
-	private Integer intensity;
-	private Integer threshold;
+	private Double potential;
+	private Double intensity;
+	private Double threshold;
 	
-	public Emotion(String name, Rule rule, Integer threshold) {
+	public Emotion(String name, Rule rule, Double threshold) {
 		this.name = name;
 		this.rule = rule;
 		this.threshold = threshold;
@@ -24,23 +24,23 @@ public class Emotion {
 		return rule;
 	}
 
-	public Integer getPotential() {
+	public Double getPotential() {
 		return potential;
 	}
 
-	public Integer getIntensity() {
+	public Double getIntensity() {
 		return intensity;
 	}
 
-	public Integer getThreshold() {
+	public Double getThreshold() {
 		return threshold;
 	}
 
-	public void setPotential(Integer potential) {
+	public void setPotential(Double potential) {
 		this.potential = potential;
 	}
 
-	public void setIntensity(Integer intensity) {
+	public void setIntensity(Double intensity) {
 		this.intensity = intensity;
 	}
 

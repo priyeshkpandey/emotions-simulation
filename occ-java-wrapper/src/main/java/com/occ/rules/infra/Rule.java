@@ -23,4 +23,7 @@ public class Rule {
 		return rules.get(varType);
 	}
 
+	public Map<VariableType, Constraints> getAtomicRules() {
+		return this.rules;
+	}
 }
