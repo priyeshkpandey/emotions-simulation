@@ -137,4 +137,19 @@ public class HappyForTests extends BaseTests {
 		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null"); 
 	}
 	
+	@Test(description = "Test that HappyFor emotion doesn't occur if any variable is missing")
+	public void testHappyForMissingVariable() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, POSITIVE_VALUE.toString());
+		this.deservingness = new Variable(VariableType.DESERVINGNESS, POSITIVE_VALUE.toString());
+		this.liking = new Variable(VariableType.LIKING, POSITIVE_VALUE.toString());
+		this.desirabilityForOthers = new Variable(VariableType.DESIRABILITY_FOR_OTHER, POSITIVE_VALUE.toString());
+		this.model
+		.add(this.deservingness)
+		.add(this.liking)
+		.add(this.desirabilityForOthers);
+		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion HappyFor occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null"); 
+	}
+	
 }

@@ -24,9 +24,10 @@ public class Evaluator {
 		for (VariableType ruleVariableType : rule.getAtomicRules().keySet()) {
 			Constraints constraintsForVariable = rule.getConstraintsForVariable(ruleVariableType);
 			Variable variable = model.getVariableOfType(ruleVariableType);
-			for (ConstraintKeys constraintKey : ConstraintKeys.values()) {
+			for (ConstraintKeys constraintKey : constraintsForVariable.getConstraintKeySet()) {
+				localConstraintEvaluation = false;
 				Boolean constraintValue = constraintsForVariable.getConstraintValue(constraintKey);
-				if (null != constraintValue && constraintValue) {
+				if (null != constraintValue && constraintValue && null != variable) {
 					localConstraintEvaluation = evaluateConstraint(constraintKey, variable.getValue());
 				}
 				
@@ -42,13 +43,13 @@ public class Evaluator {
 		NumberFormat numberFormat = NumberFormat.getInstance();
 		switch(constraintKey) {
 		case IS_NEGATIVE:
-			return (numberFormat.parse(value).doubleValue() < 0.0);
+			return (null != value && !value.trim().equals("")) && (numberFormat.parse(value).doubleValue() < 0.0);
 		case IS_POSITIVE:
-			return (numberFormat.parse(value).doubleValue() > 0.0);
+			return (null != value && !value.trim().equals("")) && (numberFormat.parse(value).doubleValue() > 0.0);
 		case IS_PRESENT:
 			return (null != value && !value.trim().equals(""));
 		case IS_ZERO:
-			return (numberFormat.parse(value).doubleValue() == 0.0);
+			return (null != value && !value.trim().equals("")) && (numberFormat.parse(value).doubleValue() == 0.0);
 		default:
 			return false;
 		}

@@ -2,6 +2,7 @@ package com.occ.rules.infra;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Constraints {
 	
@@ -19,6 +20,10 @@ public class Constraints {
 	
 	public Boolean getConstraintValue(ConstraintKeys constraint) {
 		return constraints.get(constraint);
+	}
+	
+	public Set<ConstraintKeys> getConstraintKeySet() {
+		return constraints.keySet();
 	}
 
 }
