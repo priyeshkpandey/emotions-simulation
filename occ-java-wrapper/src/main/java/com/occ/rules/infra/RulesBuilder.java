@@ -123,6 +123,7 @@ public class RulesBuilder {
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
+		.add(VariableType.LIKELIHOOD, positiveConstraints)
 		.add(VariableType.REALIZATION, positiveConstraints)
 		.add(VariableType.EFFORT, presentConstraints);
 		return rule;
@@ -136,6 +137,7 @@ public class RulesBuilder {
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
+		.add(VariableType.LIKELIHOOD, positiveConstraints)
 		.add(VariableType.REALIZATION, positiveConstraints)
 		.add(VariableType.EFFORT, presentConstraints);
 		return rule;
@@ -143,11 +145,13 @@ public class RulesBuilder {
 	
 	public static Rule buildReliefRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
+		Constraints positiveConstraints = buildPositiveConstraints();
 		Constraints negativeConstraints = buildNegativeConstraints();
 		Constraints presentConstraints = buildPresentConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
+		.add(VariableType.LIKELIHOOD, positiveConstraints)
 		.add(VariableType.REALIZATION, negativeConstraints)
 		.add(VariableType.EFFORT, presentConstraints);
 		return rule;
@@ -161,6 +165,7 @@ public class RulesBuilder {
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
+		.add(VariableType.LIKELIHOOD, positiveConstraints)
 		.add(VariableType.REALIZATION, negativeConstraints)
 		.add(VariableType.EFFORT, presentConstraints);
 		return rule;
