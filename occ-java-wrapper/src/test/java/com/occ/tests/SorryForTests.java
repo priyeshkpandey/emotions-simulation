@@ -138,7 +138,7 @@ public class SorryForTests extends BaseTests {
 	}
 	
 	@Test(description = "Test that SorryFor emotion doesn't occur if any variable is missing")
-	public void testHappyForMissingVariable() throws Exception {
+	public void testSorryForMissingVariable() throws Exception {
 		this.desirability = new Variable(VariableType.DESIRABILITY, NEGATIVE_VALUE.toString());
 		this.deservingness = new Variable(VariableType.DESERVINGNESS, NEGATIVE_VALUE.toString());
 		this.liking = new Variable(VariableType.LIKING, POSITIVE_VALUE.toString());
