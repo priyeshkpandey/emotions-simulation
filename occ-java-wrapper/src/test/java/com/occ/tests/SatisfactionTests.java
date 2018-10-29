@@ -58,16 +58,115 @@ public class SatisfactionTests extends BaseTests {
 		Assert.assertTrue(this.emotion.getIntensity() > 0.0, "Emotion intensity is not greater than zero"); 
 	}
 	
+	@Test(description = "Emotion Satisfaction doesn't occur with negative desirabitliy")
 	public void testSatisfactionNegativeDesirability() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, NEGATIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, POSITIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, POSITIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, POSITIVE_VALUE.toString());
+		this.model
+		.add(this.desirability)
+		.add(likelihood)
+		.add(this.realization)
+		.add(this.effort);
 		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null");
 	}
 	
+	@Test(description = "Emotion Satisfaction doesn't occur with negative likelihood")
 	public void testSatisfactionNegativeLikelihood() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, POSITIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, NEGATIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, POSITIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, POSITIVE_VALUE.toString());
+		this.model
+		.add(this.desirability)
+		.add(likelihood)
+		.add(this.realization)
+		.add(this.effort);
 		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null");
 	}
 	
+	@Test(description = "Emotion Satisfaction doesn't occur with negative realization")
 	public void testSatisfactionNegativeRealization() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, POSITIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, POSITIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, NEGATIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, POSITIVE_VALUE.toString());
+		this.model
+		.add(this.desirability)
+		.add(likelihood)
+		.add(this.realization)
+		.add(this.effort);
 		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null");
+	}
+	
+	@Test(description = "Emotion Satisfaction does occur with zero effort")
+	public void testSatisfactionZeroEffort() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, POSITIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, POSITIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, POSITIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, ZERO_VALUE.toString());
+		this.model
+		.add(this.desirability)
+		.add(likelihood)
+		.add(this.realization)
+		.add(this.effort);
+		
+		Assert.assertTrue(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction didn't occur with zero effort");
+		Assert.assertNotNull(this.emotion.getIntensity(), "Emotion intensity is null"); 
+		Assert.assertTrue(this.emotion.getIntensity() > 0.0, "Emotion intensity is not greater than zero"); 
+	}
+	
+	@Test(description = "Emotion Satisfaction doesn't occur with negative missing effort")
+	public void testSatisfactionMissingEffort() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, POSITIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, POSITIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, POSITIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, POSITIVE_VALUE.toString());
+		this.model
+		.add(this.desirability)
+		.add(likelihood)
+		.add(this.realization);
+		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null");
+	}
+	
+	@Test(description = "Emotion Satisfaction doesn't occur with all negative variables")
+	public void testSatisfactionAllNegative() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, NEGATIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, NEGATIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, NEGATIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, NEGATIVE_VALUE.toString());
+		this.model
+		.add(this.desirability)
+		.add(likelihood)
+		.add(this.realization)
+		.add(this.effort);
+		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null");
+	}
+	
+	@Test(description = "Emotion Satisfaction doesn't occur with a missing variable")
+	public void testSatisfactionMissingVariable() throws Exception {
+		this.desirability = new Variable(VariableType.DESIRABILITY, POSITIVE_VALUE.toString());
+		this.likelihood = new Variable(VariableType.LIKELIHOOD, POSITIVE_VALUE.toString());
+		this.realization = new Variable(VariableType.REALIZATION, POSITIVE_VALUE.toString());
+		this.effort = new Variable(VariableType.EFFORT, POSITIVE_VALUE.toString());
+		this.model
+		.add(likelihood)
+		.add(this.realization)
+		.add(this.effort);
+		
+		Assert.assertFalse(Evaluator.evaluate(this.emotion, this.model), "Emotion Satisfaction occurred");
+		Assert.assertNull(this.emotion.getIntensity(), "Emotion intensity is not null");
 	}
 
 }
