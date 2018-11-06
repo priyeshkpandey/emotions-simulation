@@ -4,39 +4,8 @@ import com.occ.common.VariableType;
 
 public class RulesBuilder {
 	
-	private static Constraints buildPresentConstraints() {
-		Constraints constraints = new Constraints();
-		constraints.fromEmpty()
-		.add(ConstraintKeys.IS_PRESENT, true);
-		return constraints;
-	}
-	
-	private static Constraints buildPositiveConstraints() {
-		Constraints positiveConstraints = new Constraints();
-		positiveConstraints.fromEmpty()
-		.add(ConstraintKeys.IS_PRESENT, true)
-		.add(ConstraintKeys.IS_POSITIVE, true);
-		return positiveConstraints;
-	}
-	
-	private static Constraints buildZeroConstraints() {
-		Constraints zeroConstraints = new Constraints();
-		zeroConstraints.fromEmpty()
-		.add(ConstraintKeys.IS_PRESENT, true)
-		.add(ConstraintKeys.IS_ZERO, true);
-		return zeroConstraints;
-	}
-	
-	private static Constraints buildNegativeConstraints() {
-		Constraints negativeConstraints = new Constraints();
-		negativeConstraints.fromEmpty()
-		.add(ConstraintKeys.IS_PRESENT, true)
-		.add(ConstraintKeys.IS_NEGATIVE, true);
-		return negativeConstraints;
-	}
-	
 	private static Rule buildGlobalVariablesPresentRule() {
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		Rule rule = new Rule();
 		rule.fromEmpty()
 		.add(VariableType.UNEXPECTEDNESS, presentConstraints)
@@ -48,7 +17,7 @@ public class RulesBuilder {
 	
 	public static Rule buildHappyForRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
 		.add(VariableType.DESERVINGNESS, positiveConstraints)
@@ -59,8 +28,8 @@ public class RulesBuilder {
 	
 	public static Rule buildResentmentRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
 		.add(VariableType.DESERVINGNESS, negativeConstraints)
@@ -71,8 +40,8 @@ public class RulesBuilder {
 	
 	public static Rule buildSorryForRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
@@ -84,8 +53,8 @@ public class RulesBuilder {
 	
 	public static Rule buildGloatingRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
@@ -97,7 +66,7 @@ public class RulesBuilder {
 	
 	public static Rule buildHopeRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
@@ -107,8 +76,8 @@ public class RulesBuilder {
 	
 	public static Rule buildFearRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
@@ -118,8 +87,8 @@ public class RulesBuilder {
 	
 	public static Rule buildSatisfactionRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
@@ -131,9 +100,9 @@ public class RulesBuilder {
 	
 	public static Rule buildFearsConfirmedRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
@@ -145,9 +114,9 @@ public class RulesBuilder {
 	
 	public static Rule buildReliefRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
@@ -159,9 +128,9 @@ public class RulesBuilder {
 	
 	public static Rule buildDisappointmentRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
@@ -173,7 +142,7 @@ public class RulesBuilder {
 	
 	public static Rule buildJoyRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints);
@@ -182,7 +151,7 @@ public class RulesBuilder {
 	
 	public static Rule buildDistressRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints negativeConstraints = buildNegativeConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints);
@@ -191,8 +160,8 @@ public class RulesBuilder {
 	
 	public static Rule buildPrideRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		
 		rule
 		.add(VariableType.PRAISEWORTHINESS, positiveConstraints)
@@ -203,9 +172,9 @@ public class RulesBuilder {
 	
 	public static Rule buildShameRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints presentConstraints = ConstraintsBuilder.buildPresentConstraints();
 		
 		rule
 		.add(VariableType.PRAISEWORTHINESS, negativeConstraints)
@@ -216,104 +185,91 @@ public class RulesBuilder {
 	
 	public static Rule buildAdmirationRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
-		Constraints zeroConstraints = buildZeroConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.PRAISEWORTHINESS, positiveConstraints)
-		.add(VariableType.STRENGTH_OF_COG_UNIT, zeroConstraints)
-		.add(VariableType.EXPECTATION_DEVIATION, presentConstraints);
+		.add(VariableType.EXPECTATION_DEVIATION, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildReproachRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
-		Constraints zeroConstraints = buildZeroConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.PRAISEWORTHINESS, negativeConstraints)
-		.add(VariableType.STRENGTH_OF_COG_UNIT, zeroConstraints)
-		.add(VariableType.EXPECTATION_DEVIATION, presentConstraints);
+		.add(VariableType.EXPECTATION_DEVIATION, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildGratificationRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
 		.add(VariableType.PRAISEWORTHINESS, positiveConstraints)
 		.add(VariableType.STRENGTH_OF_COG_UNIT, positiveConstraints)
-		.add(VariableType.EXPECTATION_DEVIATION, presentConstraints);
+		.add(VariableType.EXPECTATION_DEVIATION, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildRemorseRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
 		.add(VariableType.PRAISEWORTHINESS, negativeConstraints)
 		.add(VariableType.STRENGTH_OF_COG_UNIT, positiveConstraints)
-		.add(VariableType.EXPECTATION_DEVIATION, presentConstraints);
+		.add(VariableType.EXPECTATION_DEVIATION, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildGratitudeRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
-		Constraints zeroConstraints = buildZeroConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, positiveConstraints)
 		.add(VariableType.PRAISEWORTHINESS, positiveConstraints)
-		.add(VariableType.STRENGTH_OF_COG_UNIT, zeroConstraints)
-		.add(VariableType.EXPECTATION_DEVIATION, presentConstraints);
+		.add(VariableType.EXPECTATION_DEVIATION, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildAngerRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
-		Constraints zeroConstraints = buildZeroConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.DESIRABILITY, negativeConstraints)
 		.add(VariableType.PRAISEWORTHINESS, negativeConstraints)
-		.add(VariableType.STRENGTH_OF_COG_UNIT, zeroConstraints)
-		.add(VariableType.EXPECTATION_DEVIATION, presentConstraints);
+		.add(VariableType.EXPECTATION_DEVIATION, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildLoveRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints positiveConstraints = buildPositiveConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.APPEALINGNESS, positiveConstraints)
-		.add(VariableType.FAMILIARITY, presentConstraints);
+		.add(VariableType.FAMILIARITY, positiveConstraints);
 		return rule;
 	}
 	
 	public static Rule buildHateRule() {
 		Rule rule = buildGlobalVariablesPresentRule();
-		Constraints negativeConstraints = buildNegativeConstraints();
-		Constraints presentConstraints = buildPresentConstraints();
+		Constraints negativeConstraints = ConstraintsBuilder.buildNegativeConstraints();
+		Constraints positiveConstraints = ConstraintsBuilder.buildPositiveConstraints();
 		
 		rule
 		.add(VariableType.APPEALINGNESS, negativeConstraints)
-		.add(VariableType.FAMILIARITY, presentConstraints);
+		.add(VariableType.FAMILIARITY, positiveConstraints);
 		return rule;
 	}
 

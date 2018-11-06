@@ -1,6 +1,7 @@
 package com.occ.tests;
 
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,10 +10,11 @@ import com.occ.common.Evaluator;
 import com.occ.common.VariableType;
 import com.occ.entities.Emotion;
 import com.occ.entities.Variable;
+import com.occ.models.infra.Model;
 import com.occ.rules.infra.Rule;
 import com.occ.rules.infra.RulesBuilder;
 
-public class FearsConfirmedTests extends BaseTests {
+public class FearsConfirmedTest extends BaseTest {
 	
 	private static final Double POSITIVE_VALUE = 0.3;
 	private static final Double NEGATIVE_VALUE = -0.3;
@@ -24,9 +26,10 @@ public class FearsConfirmedTests extends BaseTests {
 	private Variable effort;
 	
 	@BeforeClass
-	public void setupBeforeClass() {
+	public void setupBeforeClass(ITestContext context) {
 		Rule rule = RulesBuilder.buildFearsConfirmedRule();
 		this.emotion = new Emotion("FearsConfirmed", rule, THRESHOLD);
+		this.model = (Model) context.getAttribute("model");
 	}
 	
 	@AfterMethod

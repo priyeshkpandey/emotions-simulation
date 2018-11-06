@@ -45,7 +45,7 @@ public class Evaluator {
 		case IS_NEGATIVE:
 			return (null != value && !value.trim().equals("")) && (numberFormat.parse(value).doubleValue() < 0.0);
 		case IS_POSITIVE:
-			return (null != value && !value.trim().equals("")) && (numberFormat.parse(value).doubleValue() > 0.0);
+			return (null != value && !value.trim().equals("")) && (numberFormat.parse(value).doubleValue() >= 0.0);
 		case IS_PRESENT:
 			return (null != value && !value.trim().equals(""));
 		case IS_ZERO:
