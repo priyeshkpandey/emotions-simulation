@@ -4,13 +4,22 @@ A simulation framework for Emotions based on OCC model (Ortony, A., Clore, G., &
 
 ## Getting Started
 
-Maven dependency to be updated once successfully deployed to the Maven repository
+To use the framework, simply add the below maven dependency to your project
+```
+<dependency>
+  <groupId>com.github.priyeshkpandey</groupId>
+	<artifactId>occ-model</artifactId>
+	<version>1.0.0</version>
+</dependency>
+```
+
+To understand how to use the framework, please refer the tests written for this framework under ```src/test/java```
 
 ### Prerequisites
 
 ```
-Install Java 8
-Install Maven
+Java 8
+Maven
 ```
 
 ### Installing
@@ -18,22 +27,17 @@ Install Maven
 Either clone the repo or include the dependency in your mavne project
 
 ## Running the tests
-
+Clone this repo.
 After cloning, you can run the tests simply by running ```mvn clean install``` that will build and run the tests.
-
-
-## Deployment
-
-Yet to define
 
 
 ## Contributing
 
-Yet to define
+To contribute, please fork and make changes. Raise PR once you have committed your changes
 
 
 
 ## License
 
-This project is licensed under the Apache License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache License
 
