@@ -32,43 +32,27 @@ After cloning, you can run the tests simply by running ```mvn clean install``` t
 
 ## Definitions of Variables
 
-{| class="wikitable"
-|+ Caption: Variable Definitions. Values for all the variables are assumed falling in the same range.
-|-
-! VariableType !! Description !! Value Restrictions !! Influenced Emotions
-|-
-| row1cell1 || row1cell2 || row1cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|-
-| row2cell1 || row2cell2 || row2cell3 || Emotions
-|}
+Values for all the variables are assumed falling in the same range.
+
+| Variable Type | Description | Value Restrictions | Influenced Emotions |
+|--------------|-------------|--------------------|---------------------|
+| row1cell1 | row1cell2 | row1cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+| row2cell1 | row2cell2 | row2cell3 | Emotions |
+
 
 ## Contributing
 
