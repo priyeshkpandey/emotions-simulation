@@ -8,8 +8,8 @@ To use the framework, simply add the below maven dependency to your project
 ```
 <dependency>
   <groupId>com.github.priyeshkpandey</groupId>
-	<artifactId>occ-model</artifactId>
-	<version>1.0.0</version>
+  <artifactId>occ-model</artifactId>
+  <version>1.0.0</version>
 </dependency>
 ```
 
@@ -24,12 +24,51 @@ Maven
 
 ### Installing
 
-Either clone the repo or include the dependency in your mavne project
+Either clone the repo or include the dependency in your maven project
 
 ## Running the tests
 Clone this repo.
 After cloning, you can run the tests simply by running ```mvn clean install``` that will build and run the tests.
 
+## Definitions of Variables
+
+{| class="wikitable"
+|+ Caption: Variable Definitions. Values for all the variables are assumed falling in the same range.
+|-
+! VariableType !! Description !! Value Restrictions !! Influenced Emotions
+|-
+| row1cell1 || row1cell2 || row1cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|-
+| row2cell1 || row2cell2 || row2cell3 || Emotions
+|}
 
 ## Contributing
 
