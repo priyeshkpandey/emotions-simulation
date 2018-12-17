@@ -62,5 +62,5 @@ To contribute, please fork and make changes. Raise PR once you have committed yo
 
 ## License
 
-This project is licensed under the Apache License
+This project is licensed under the MIT license
 
